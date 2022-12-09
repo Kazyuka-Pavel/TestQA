@@ -1,0 +1,9 @@
+_0051192 filling in Package unit when create new item - У поля "Package unit" нет кнопки выбора.
+_054006 create Cash transfer order (from Cash/Bank accounts to bank account in the same currency) - проверка движения по регистру накопления Planing cash transactions, открывает ссылку e1cib/list/AccumulationRegister.R3035T_CashPlanning и проверяет наличие строки из шаблона. Не нашел строку из шаблона.
+_054009 currency exchange within one Cash/Bank accounts with exchange in parts (exchange rate has decreased) - And I click choice button of "Partner" attribute in "PaymentList" table - не получилось нажать на кнопку выбора у колонки "Partner" в таблице "PaymentList".
+_054017 check message output in case the user tries to create Bank receipt again by Cash transfer order - не дождался сообщения "The total amount of the "Cash transfer order" document(s) is already received on the basis of the "Bank receipt" document(s)." в течении 30 секунд после нажатия на кнопку FormDocumentBankReceiptGenarateBankReceipt
+_154530 message when trying to re-create Purchase order/Inventory transfer order based on Internal supply request -Then If dialog box is visible I click "OK" - похоже, что это не диалог а модальная форма.
+_4000200 preparation - Given I open hyperlink "e1cib/list/Catalog.Workstations" - не удалось перейти по гиперссылке e1cib/list/Catalog.Workstations
+_4000202 hardware - And I go to line in "List" table - не нашел строку со значением "Workstation 01" в колонке "Description"
+
+
