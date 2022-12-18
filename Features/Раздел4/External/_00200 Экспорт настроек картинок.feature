@@ -3,12 +3,15 @@
 @ExportScenarios
 @IgnoreOnCIMainBuild
 
-Функционал: экспорт настроек картинок
+Функционал: _00200 экспорт настроек картинок
 
 Контекст:
 	Дано Я запускаю сценарий открытия TestClient или подключаю уже существующий
 
-Сценарий: экспорт настроек картинок
+@ТипШага: Загрузка данных IRP
+@Описание: _00210 Экспорт настроек картинок
+@ПримерИспользования: И _00210 Экспорт настроек картинок
+Сценарий: _00210 Экспорт настроек картинок
 
 	И я проверяю или создаю для справочника "IntegrationSettings" объекты:
 		| 'Ref'                                                                         | 'DeletionMark' | 'Code' | 'Description'     | 'ExternalDataProc'                                                         | 'IntegrationType'                       | 'ExternalDataProcSettings'              | 'UniqueID'                          |
@@ -17,8 +20,8 @@
 
 	И я перезаполняю для объекта табличную часть "ConnectionSetting":
 		| 'Ref'                                                                         | 'Key'         | 'Value'                               |
-		| 'e1cib/data/Catalog.IntegrationSettings?ref=b772dbcd8801bc7611ec420177a49494' | 'AddressPath' | 'C:\\Users\\Seramiti\\Documents\\Source'  |
-		| 'e1cib/data/Catalog.IntegrationSettings?ref=b772dbcd8801bc7611ec420177a49495' | 'AddressPath' | 'C:\\Users\\Seramiti\\Documents\\Preview' |
+		| 'e1cib/data/Catalog.IntegrationSettings?ref=b772dbcd8801bc7611ec420177a49494' | 'AddressPath' | 'C:\\Users\\pvlp\\Documents\\GitHub\\TestQA\\Other\\Source'  |
+		| 'e1cib/data/Catalog.IntegrationSettings?ref=b772dbcd8801bc7611ec420177a49495' | 'AddressPath' | 'C:\\Users\\pvlp\\Documents\\GitHub\\TestQA\\Other\\Preview' |
 
 	И я перезаполняю константу "DefaultPictureStorageVolume" значением "e1cib/data/Catalog.FileStorageVolumes?ref=b772dbcd8801bc7611ec420177a49496"
 

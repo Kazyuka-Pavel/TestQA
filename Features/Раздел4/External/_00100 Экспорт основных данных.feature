@@ -3,12 +3,15 @@
 @ExportScenarios
 @IgnoreOnCIMainBuild
 
-Функционал: экспорт основных данных
+Функционал: _00100 экспорт основных данных
 
 Контекст:
 	Дано Я запускаю сценарий открытия TestClient или подключаю уже существующий
 
-Сценарий: экспорт основных данных
+@ТипШага: Загрузка данных IRP
+@Описание: _00110 Экспорт основных данных
+@ПримерИспользования: И _00110 экспорт основных данных
+Сценарий: _00110 Экспорт основных данных
 
 	И я перезаполняю константу "SaasMode" значением "False"
 
@@ -94,7 +97,12 @@
 		| 'e1cib/data/Catalog.Units?ref=b762b13668d0905011eb76684b9f687b' | 'False'        | 1      | ''     | 1          | ''                                                              | ''    | 'шт'              | ''                 | ''               | ''               |          |          |          |          |         |
 		| 'e1cib/data/Catalog.Units?ref=b762b13668d0905011eb76684b9f687c' | 'False'        | 2      | ''     | 8          | 'e1cib/data/Catalog.Units?ref=b762b13668d0905011eb76684b9f687b' | ''    | 'упаковка 8 штук' | ''                 | ''               | ''               |          |          |          |          |         |
 
-
+	И я проверяю или создаю для плана видов характеристик "AddAttributeAndProperty" объекты:
+		| 'Ref'                                                                                                | 'DeletionMark' | 'Parent' | 'IsFolder' | 'Icon'                                  | 'isIconSet' | 'Description_en'          | 'Description_hash' | 'Description_ru' | 'Description_tr' | 'UniqueID'                          |
+		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb766bf96b275d' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Бренд'                   | ''                 | ''               | ''               | '_4355827b63dc41b8b540f65790e07f5d' |
+		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb76684b9f6877' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Цвет'                    | ''                 | ''               | ''               | '_453185245f214e42a64fd25b1daf8614' |
+		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb76684b9f6872' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Размер'                  | ''                 | ''               | ''               | '_aa59a52a77bd48d5af340a2ff98411a9' |
+		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb766bf96b275f' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Подтверждение получения' | ''                 | ''               | ''               | '_c99927290ef04979822d1988903da1de' |
 
 	И я проверяю или создаю для справочника "AddAttributeAndPropertyValues" объекты:
 		| 'Ref'                                                                                   | 'DeletionMark' | 'Owner'                                                                                              | 'Code' | 'AdditionalID' | 'Description_en' | 'Description_hash' | 'Description_ru' | 'Description_tr' | 'UniqueID'                          |
@@ -222,15 +230,6 @@
 		| 'e1cib/data/Catalog.BusinessUnits?ref=b762b13668d0905011eb7663e35d7959' | 'False'        | 2      | 'Подразделение 2'                     | ''                 | ''               | ''               |
 		| 'e1cib/data/Catalog.BusinessUnits?ref=b762b13668d0905011eb7663e35d795a' | 'False'        | 3      | 'Подразделение 3 (розничный магазин)' | ''                 | ''               | ''               |
 
-
-
-	И я проверяю или создаю для справочника "Users" объекты:
-		| 'Ref'                                                           | 'DeletionMark' | 'Code' | 'Description' | 'InfobaseUserID'                       | 'Partner' | 'LocalizationCode' | 'ShowInList' | 'UserGroup'                                                          | 'InterfaceLocalizationCode' | 'FormScaleVariant' | 'Description_en' | 'Description_hash' | 'Description_ru' | 'Description_tr' |
-		| 'e1cib/data/Catalog.Users?ref=b762b13668d0905011eb766bf96b2777' | 'False'        | 1      | 'Админ'       | '0d1a0eef-ac2d-4087-b83d-d967584494cc' | ''        | 'en'               | 'False'      | 'e1cib/data/Catalog.UserGroups?ref=b762b13668d0905011eb767f10805e2c' | 'en'                        | ''                 | 'Админ'          | ''                 | ''               | ''               |
-		| 'e1cib/data/Catalog.Users?ref=aa7f120ed92fbced11eb13d7279770c0' | 'False'        | 2      | 'CI'          | 'd8339fad-aa7c-4c28-9755-547bc50e2083' | ''        | 'en'               | 'True'       | 'e1cib/data/Catalog.UserGroups?ref=b762b13668d0905011eb767f10805e2c' | 'ru'                        | ''                 | 'CI'             | ''                 | ''               | ''               |
-
-
-
 	И я проверяю или создаю для справочника "AccessProfiles" объекты:
 		| 'Ref'                                                                    | 'DeletionMark' | 'Code' | 'Description_en' | 'Description_hash' | 'Description_ru' | 'Description_tr' |
 		| 'e1cib/data/Catalog.AccessProfiles?ref=b762b13668d0905011eb766bf96b2776' | 'False'        | 1      | 'Только чтение'  | ''                 | ''               | ''               |
@@ -279,9 +278,8 @@
 		| 'e1cib/data/Catalog.Agreements?ref=b762b13668d0905011eb767f10805e2b' | 'False'        | 8      | ''        | '01.01.0001 00:00:00' | ''                                                                        | 'e1cib/data/Catalog.Partners?ref=b762b13668d0905011eb7663e35d7954' | 'e1cib/data/Catalog.Companies?ref=b762b13668d0905011eb7663e35d7964' | 'e1cib/data/Catalog.PriceTypes?ref=b762b13668d0905011eb767f10805e2a' | ''            | '01.01.2021 00:00:00' | '01.01.0001 00:00:00' | ''               | 'True'            |                      | ''                                                               | 'Enum.AgreementTypes.Customer' | ''          | 'e1cib/data/ChartOfCharacteristicTypes.CurrencyMovementType?ref=b762b13668d0905011eb7663e35d796b' | 'Enum.ApArPostingDetail.ByAgreements'        | ''                                                                   | 'Enum.AgreementKinds.Regular'  | 'False'          |                     | ''                                                                         | 'Розничное'                                                       | ''                 | ''               | ''               |
 		| 'e1cib/data/Catalog.Agreements?ref=b76cbacb2511e57d11ebeab0dfce224a' | 'False'        | 9      | ''        | '01.01.0001 00:00:00' | ''                                                                        | 'e1cib/data/Catalog.Partners?ref=b76cbacb2511e57d11ebeab0dfce2248' | ''                                                                  | 'e1cib/data/Catalog.PriceTypes?ref=b762b13668d0905011eb76684b9f6866' | ''            | '01.01.0001 00:00:00' | '01.01.0001 00:00:00' | ''               | 'False'           |                      | 'e1cib/data/Catalog.Stores?ref=b762b13668d0905011eb76684b9f6861' | 'Enum.AgreementTypes.Customer' | ''          | 'e1cib/data/ChartOfCharacteristicTypes.CurrencyMovementType?ref=b762b13668d0905011eb7663e35d796b' | 'Enum.ApArPostingDetail.ByAgreements'        | ''                                                                   | 'Enum.AgreementKinds.Regular'  | 'False'          |                     | ''                                                                         | 'Розничный клиент 1'                                              | ''                 | ''               | ''               |
 
-
-
-	И я проверяю или создаю для справочника "Specifications" объекты:
+	
+	И я проверяю или создаю для справочника "Specifications" объекты с обмен данными загрузка истина:
 		| 'Ref'                                                                    | 'DeletionMark' | 'Code' | 'Type'                          | 'ItemBundle'                                                    | 'UniqueMD5'                                       | 'Description_en'           | 'Description_hash'         | 'Description_ru'           | 'Description_tr'           |
 		| 'e1cib/data/Catalog.Specifications?ref=b762b13668d0905011eb766bf96b2755' | 'False'        | 1      | 'Enum.SpecificationType.Set'    | ''                                                              | 'A3 26 8D 43 98 25 08 12 B0 08 0D 6E EA C5 3A E0' | 'Спецификация 1'           | ''                         | ''                         | ''                         |
 		| 'e1cib/data/Catalog.Specifications?ref=b762b13668d0905011eb766bf96b2756' | 'False'        | 2      | 'Enum.SpecificationType.Set'    | ''                                                              | '96 C4 57 EB 58 E9 E7 D3 7E F1 52 45 3E FD 98 A3' | 'Спецификация 2'           | ''                         | ''                         | ''                         |
@@ -342,7 +340,7 @@
 
 	И я проверяю или создаю для справочника "ObjectStatuses" объекты:
 		| 'Ref'                                                                    | 'DeletionMark' | 'Parent'                                                            | 'IsFolder' | 'Code' | 'SetByDefault' | 'Posting' | 'Description_en'                          | 'Description_hash' | 'Description_ru' | 'Description_tr' | 'UniqueID'                          |
-		| 'e1cib/data/Catalog.ObjectStatuses?refName=PhysicalInventory'            | 'False'        | ''                                                                  | 'True'     | 1      | ''             | ''        | 'Инвентаризация товаров'                  | ''                 | ''               | ''               | '_011ff8e30cf94565b46e079f1abb75a6' |
+		| 'e1cib/data/Catalog.ObjectStatuses?refName=PhysicalInventory'            | 'False'        | ''                                                                  | 'True'     | 27      | ''             | ''        | 'Инвентаризация товаров'                  | ''                 | ''               | ''               | '_011ff8e30cf94565b46e079f1abb75a6' |
 		| 'e1cib/data/Catalog.ObjectStatuses?refName=IncomingPaymentOrder'         | 'False'        | ''                                                                  | 'True'     | 1      | ''             | ''        | 'IncomingPaymentOrder'                    | ''                 | ''               | ''               | '_d74a42dedf1b4837ab902b5246719782' |
 		| 'e1cib/data/Catalog.ObjectStatuses?refName=PhysicalCountByLocation'      | 'False'        | ''                                                                  | 'True'     | 2      | ''             | ''        | 'Пересчет товаров'                        | ''                 | ''               | ''               | '_f2caef1fffef41d3b1e506c06265f7cc' |
 		| 'e1cib/data/Catalog.ObjectStatuses?refName=ReconciliationStatement'      | 'False'        | ''                                                                  | 'True'     | 4      | ''             | ''        | 'Сверка взаиморасчетов'                   | ''                 | ''               | ''               | '_2bc125ff84c345afb9a379ecf9973f7a' |
@@ -389,7 +387,7 @@
 
 
 
-	И я проверяю или создаю для справочника "ItemKeys" объекты:
+	И я проверяю или создаю для справочника "ItemKeys" объекты с обмен данными загрузка истина:
 		| 'Ref'                                                              | 'DeletionMark' | 'Code' | 'Item'                                                          | 'Unit' | 'Specification'                                                          | 'AffectPricingMD5'                                | 'UniqueMD5'                                       | 'ItemKeyID' | 'Description_en'                        | 'Description_hash'          | 'Description_ru'            | 'Description_tr'            | 'Height' | 'Length' | 'Volume' | 'Weight' | 'Width' |
 		| 'e1cib/data/Catalog.ItemKeys?ref=b762b13668d0905011eb76684b9f687e' | 'False'        | 1      | 'e1cib/data/Catalog.Items?ref=b762b13668d0905011eb76684b9f687d' | ''     | ''                                                                       | '4A 53 01 2D 90 DB F5 40 69 39 46 E6 58 4E 97 94' | 'AD 1B 7B B1 90 6B 76 B6 A1 8F 21 1C 57 8A 45 37' | ''          | 'S/Красный'                             | 'S/Красный'                 | 'S/Красный'                 | 'S/Красный'                 |          |          |          | 0.21     |         |
 		| 'e1cib/data/Catalog.ItemKeys?ref=b762b13668d0905011eb766bf96b274f' | 'False'        | 2      | 'e1cib/data/Catalog.Items?ref=b762b13668d0905011eb76684b9f687d' | ''     | ''                                                                       | '5C D9 37 CD 2A F3 17 D7 11 01 79 CE 68 BE CD F5' | 'C6 20 E7 A5 67 61 3F 81 84 D4 9C 76 01 CA BA 34' | ''          | 'XS/Черный'                             | 'XS/Черный'                 | 'XS/Черный'                 | 'XS/Черный'                 |          |          |          |          |         |
@@ -464,16 +462,6 @@
 		| 'e1cib/data/ChartOfCharacteristicTypes.CurrencyMovementType?ref=b762b13668d0905011eb7663e35d796a' | 'False'        | 'e1cib/data/Catalog.Currencies?ref=b762b13668d0905011eb7663e35d795f' | 'e1cib/data/Catalog.IntegrationSettings?ref=b762b13668d0905011eb7663e35d7966' | 'Enum.CurrencyType.Legal'     | 'False'               | 'В локальной валюте страны' | ''                 | ''               | ''               |
 		| 'e1cib/data/ChartOfCharacteristicTypes.CurrencyMovementType?ref=b762b13668d0905011eb7663e35d796b' | 'False'        | 'e1cib/data/Catalog.Currencies?ref=b762b13668d0905011eb7663e35d795e' | 'e1cib/data/Catalog.IntegrationSettings?ref=b762b13668d0905011eb7663e35d7966' | 'Enum.CurrencyType.Agreement' | 'False'               | 'Валюта соглашения, USD'    | ''                 | ''               | ''               |
 		| 'e1cib/data/ChartOfCharacteristicTypes.CurrencyMovementType?refName=SettlementCurrency'           | 'False'        | ''                                                                   | ''                                                                            | ''                            | 'False'               | ''                          | ''                 | ''               | ''               |
-
-
-
-	И я проверяю или создаю для плана видов характеристик "AddAttributeAndProperty" объекты:
-		| 'Ref'                                                                                                | 'DeletionMark' | 'Parent' | 'IsFolder' | 'Icon'                                  | 'isIconSet' | 'Description_en'          | 'Description_hash' | 'Description_ru' | 'Description_tr' | 'UniqueID'                          |
-		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb766bf96b275d' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Бренд'                   | ''                 | ''               | ''               | '_4355827b63dc41b8b540f65790e07f5d' |
-		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb76684b9f6877' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Цвет'                    | ''                 | ''               | ''               | '_453185245f214e42a64fd25b1daf8614' |
-		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb76684b9f6872' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Размер'                  | ''                 | ''               | ''               | '_aa59a52a77bd48d5af340a2ff98411a9' |
-		| 'e1cib/data/ChartOfCharacteristicTypes.AddAttributeAndProperty?ref=b762b13668d0905011eb766bf96b275f' | 'False'        | ''       | 'False'    | 'ValueStorage:AQEIAAAAAAAAAO+7v3siVSJ9' | 'False'     | 'Подтверждение получения' | ''                 | ''               | ''               | '_c99927290ef04979822d1988903da1de' |
-
 
 
 	И я проверяю или создаю для регистра сведений "CurrencyRates" записи:
